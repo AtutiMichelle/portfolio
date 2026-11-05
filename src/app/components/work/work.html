@@ -1,0 +1,74 @@
+<section class="section" id="work">
+  <div class="container">
+    <header class="head" appReveal>
+      <h2 class="section-title">Things I've built</h2>
+      <p class="lede">A few projects I'm proud of, each solving a real problem from start to finish.</p>
+    </header>
+
+    <!-- Featured project -->
+    <article class="featured" appReveal>
+      @if (featured.image && !imageMissing()) {
+        <div class="shot">
+          <img
+            [src]="featured.image.src"
+            [alt]="featured.image.alt"
+            width="1600"
+            height="1000"
+            loading="lazy"
+            (error)="imageMissing.set(true)"
+          />
+        </div>
+      }
+
+      <div class="featured-body">
+        <h3>{{ featured.name }}</h3>
+        <p class="tagline">{{ featured.tagline }}</p>
+        <p class="summary">{{ featured.summary }}</p>
+        <ul class="highlights">
+          @for (item of featured.highlights; track item) {
+            <li><i class="ph-bold ph-check" aria-hidden="true"></i>{{ item }}</li>
+          }
+        </ul>
+        <ul class="tags" aria-label="Built with">
+          @for (tech of featured.stack; track tech) {
+            <li>{{ tech }}</li>
+          }
+        </ul>
+        <a class="code-link" [href]="featured.repo" target="_blank" rel="noopener">
+          View code on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <app-project-flow class="featured-flow" [flow]="featured.flow" direction="row" />
+    </article>
+
+    <!-- Other projects, flow diagram as the visual -->
+    <div class="pair">
+      @for (project of others; track project.slug; let odd = $odd) {
+        <article class="tile" [class.tile-alt]="odd" appReveal>
+          <div class="tile-visual">
+            <app-project-flow [flow]="project.flow" />
+          </div>
+          <div class="tile-body">
+            <h3>{{ project.name }}</h3>
+            <p class="tagline">{{ project.tagline }}</p>
+            <p class="summary">{{ project.summary }}</p>
+            <ul class="tags" aria-label="Built with">
+              @for (tech of project.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+            <a class="code-link" [href]="project.repo" target="_blank" rel="noopener">
+              View code on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <p class="more" appReveal>
+      There's more on
+      <a [href]="github" target="_blank" rel="noopener">my GitHub</a>, from a load balancer to a maze game.
+    </p>
+  </div>
+</section>

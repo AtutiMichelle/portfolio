@@ -1,0 +1,30 @@
+<section class="hero" id="top">
+  <div class="container grid">
+    <div class="copy">
+      <p class="hello">Hi, I'm {{ profile.firstName }}</p>
+      <h1>{{ profile.headline }}</h1>
+      <p class="intro">{{ profile.intro }}</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#work">See my work <i class="ph-bold ph-arrow-down" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <figure class="portrait">
+      @if (photoMissing()) {
+        <div class="fallback" role="img" [attr.aria-label]="profile.name">
+          <span>AM</span>
+        </div>
+      } @else {
+        <img
+          [src]="profile.photo"
+          [alt]="'Portrait of ' + profile.name"
+          width="480"
+          height="600"
+          fetchpriority="high"
+          (error)="photoMissing.set(true)"
+        />
+      }
+    </figure>
+  </div>
+</section>

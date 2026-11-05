@@ -1,0 +1,24 @@
+<section class="section" id="contact">
+  <div class="container">
+    <div class="card" appReveal>
+      <h2>Have a project or a role in mind?</h2>
+      <p class="sub">I'm open to new work and collaborations. Say hello and I'll get back to you.</p>
+      <div class="actions">
+        <a class="btn btn-light" [href]="'mailto:' + profile.email">
+          Get in touch <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-outline" [href]="profile.github" target="_blank" rel="noopener">
+          <i class="ph ph-github-logo" aria-hidden="true"></i> GitHub
+        </a>
+      </div>
+      <p class="email">{{ profile.email }}</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container foot">
+    <p>&copy; {{ year }} {{ profile.name }}</p>
+    <a href="#top">Back to top <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>

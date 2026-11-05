@@ -1,0 +1,12 @@
+<p class="flow-title">{{ flow().title }}</p>
+<ol class="steps">
+  @for (step of flow().steps; track step.label; let i = $index) {
+    <li class="step" [style.--i]="i">
+      <span class="dot" aria-hidden="true">{{ i + 1 }}</span>
+      <span class="text">
+        <span class="label">{{ step.label }}</span>
+        <span class="note">{{ step.note }}</span>
+      </span>
+    </li>
+  }
+</ol>

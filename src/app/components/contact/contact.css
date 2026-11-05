@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+  border-radius: calc(var(--radius) + 12px);
+  background:
+    radial-gradient(circle at 90% 10%, rgb(255 255 255 / 0.16), transparent 45%),
+    radial-gradient(circle at 5% 100%, rgb(0 0 0 / 0.14), transparent 50%),
+    var(--accent);
+  color: var(--accent-ink);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  max-width: 16ch;
+  margin-inline: auto;
+}
+
+.sub {
+  margin: 1.25rem auto 0;
+  max-width: 46ch;
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+.btn-light {
+  background: var(--accent-ink);
+  color: var(--accent);
+}
+
+.btn-light:hover {
+  background: color-mix(in oklab, var(--accent-ink) 88%, var(--accent));
+}
+
+.btn-outline {
+  border-color: color-mix(in oklab, var(--accent-ink) 55%, transparent);
+  color: var(--accent-ink);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-ink);
+}
+
+.btn-outline:hover i {
+  transform: none;
+}
+
+.email {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  user-select: all;
+}
+
+.footer {
+  padding-block: 2rem 2.5rem;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.foot a:hover {
+  color: var(--ink);
+}

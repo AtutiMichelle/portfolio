@@ -1,0 +1,26 @@
+<section class="section about" id="about">
+  <div class="container grid">
+    <div class="story" appReveal>
+      <h2 class="section-title">A bit about me</h2>
+      @for (para of profile.about; track $index) {
+        <p>{{ para }}</p>
+      }
+    </div>
+
+    <div class="skills" appReveal>
+      <h3 class="skills-title">What I work with</h3>
+      <div class="groups">
+        @for (group of profile.skills; track group.group) {
+          <div class="group">
+            <p class="group-name">{{ group.group }}</p>
+            <ul class="tags">
+              @for (item of group.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
