@@ -21,22 +21,26 @@
       }
 
       <div class="featured-body">
-        <h3>{{ featured.name }}</h3>
-        <p class="tagline">{{ featured.tagline }}</p>
-        <p class="summary">{{ featured.summary }}</p>
-        <ul class="highlights">
-          @for (item of featured.highlights; track item) {
-            <li><i class="ph-bold ph-check" aria-hidden="true"></i>{{ item }}</li>
-          }
-        </ul>
-        <ul class="tags" aria-label="Built with">
-          @for (tech of featured.stack; track tech) {
-            <li>{{ tech }}</li>
-          }
-        </ul>
-        <a class="code-link" [href]="featured.repo" target="_blank" rel="noopener">
-          View code on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
-        </a>
+        <div class="featured-intro">
+          <h3>{{ featured.name }}</h3>
+          <p class="tagline">{{ featured.tagline }}</p>
+          <p class="summary">{{ featured.summary }}</p>
+          <a class="code-link" [href]="featured.repo" target="_blank" rel="noopener">
+            View code on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="featured-details">
+          <ul class="highlights">
+            @for (item of featured.highlights; track item) {
+              <li><i class="ph-bold ph-check" aria-hidden="true"></i>{{ item }}</li>
+            }
+          </ul>
+          <ul class="tags" aria-label="Built with">
+            @for (tech of featured.stack; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+        </div>
       </div>
 
       <app-project-flow class="featured-flow" [flow]="featured.flow" direction="row" />

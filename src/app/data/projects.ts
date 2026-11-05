@@ -32,10 +32,6 @@ export const projects: Project[] = [
     ],
     stack: ['Angular', 'TypeScript', 'Supabase', 'PostgreSQL', 'M-Pesa', 'Vitest'],
     repo: 'https://github.com/AtutiMichelle/Bus-Ease',
-    image: {
-      src: 'images/projects/busease-home.webp',
-      alt: 'BusEase home page with a search form for origin, destination and travel date',
-    },
     flow: {
       title: 'Booking flow',
       steps: [

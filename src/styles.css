@@ -1,18 +1,18 @@
 /*
-  Design tokens. One accent (terracotta), one neutral family (rose-tinted).
+  Design tokens. One accent (purple), one neutral family (lavender-tinted).
   Radius rule: cards and media 20px, buttons and tags full pill.
 */
 :root {
-  --bg: #f5f0ed;
-  --surface: #ece3de;
-  --surface-strong: #e3d6cf;
-  --ink: #2a2321;
-  --muted: #6b5f5a;
-  --line: #ddd0c9;
-  --accent: #b0452a;
-  --accent-ink: #fdf8f6;
-  --accent-soft: #f2dcd2;
-  --shadow: 0 18px 50px -24px rgb(110 60 40 / 0.35);
+  --bg: #f6f3f8;
+  --surface: #ece6f1;
+  --surface-strong: #e1d8ea;
+  --ink: #241f2b;
+  --muted: #655c70;
+  --line: #dcd3e5;
+  --accent: #6d3fc0;
+  --accent-ink: #faf7fd;
+  --accent-soft: #e6dcf6;
+  --shadow: 0 18px 50px -24px rgb(70 40 120 / 0.35);
 
   --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
   --font-body: 'Figtree', system-ui, sans-serif;
@@ -28,15 +28,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1816;
-    --surface: #26201d;
-    --surface-strong: #322a26;
-    --ink: #f3ebe6;
-    --muted: #b8aaa2;
-    --line: #3a312c;
-    --accent: #ec8b67;
-    --accent-ink: #2a1610;
-    --accent-soft: #3d2720;
+    --bg: #17141c;
+    --surface: #211c28;
+    --surface-strong: #2c2534;
+    --ink: #f1ecf6;
+    --muted: #b0a6bc;
+    --line: #342c3e;
+    --accent: #b392f0;
+    --accent-ink: #1d1230;
+    --accent-soft: #2f2443;
     --shadow: 0 18px 50px -24px rgb(0 0 0 / 0.6);
     color-scheme: dark;
   }

@@ -93,11 +93,22 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-/* No screenshot: body spans the top row */
+/* No screenshot: body spans the top row, split into intro and details */
 .featured:not(:has(.shot)) {
   grid-template-areas:
     'body body'
     'flow flow';
+}
+
+.featured:not(:has(.shot)) .featured-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.featured:not(:has(.shot)) .highlights {
+  margin-top: 0;
 }
 
 .highlights {
@@ -188,6 +199,10 @@ h3 {
     grid-template-areas:
       'body'
       'flow';
+  }
+
+  .featured:not(:has(.shot)) .featured-body {
+    grid-template-columns: 1fr;
   }
 
   .pair {
